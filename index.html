@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Briana Wright</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/lux/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"  />
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -15,13 +16,14 @@
     
     </head>
 <body ng-app="myApp">
-    <p><a href="#/!">About</a></p>
-    <a href="#!experience">Experience</a>
-    <a href="#!education">Education</a>
-    <a href="#!skills">Skills</a>
-    <a href="#!interests">Interests</a>
-
-    <div ng-view></div>
+    <div class="sidenav">
+        <a href="#/!">About</a>
+        <a href="#!experience">Experience</a>
+        <a href="#!education">Education</a>
+        <a href="#!skills">Skills</a>
+        <a href="#!interests">Interests</a>
+    </div>
+    <div class="main" ng-view></div>
 
     <script>
             var app = angular.module("myApp", ["ngRoute"]);
