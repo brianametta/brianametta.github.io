@@ -1,72 +1,79 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Briana Wright</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/3rdParty/simple-sidebar.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/lux/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    </head>
+    <body ng-app="myApp">
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a ng-href="#!">About</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!experience">Experience</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!education">Education</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!skills">Skills</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!interests">Interests</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Briana Wright</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/lux/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-</head>
-<body ng-app="myApp">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <a class="navbar-brand" href="#page-top">
-            <span class="d-block d-lg-none">Briana Wright</span>
-            <span class="d-none d-lg-block">
-            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="">
-            </span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" ng-href="#!">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" ng-href="#!experience">Experience</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" ng-href="#!education">Education</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" ng-href="#!skills">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" ng-href="#!interests">Interests</a>
-            </li>
-            </ul>
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid" ng-view>
+                    <!-- <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> -->
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
         </div>
-    </nav>
-      
-    <div class="p-3 p-lg-5 d-flex d-column" ng-view></div>
 
-    <script>
-            var app = angular.module("myApp", ["ngRoute"]);
-            app.config(function($routeProvider) {
-                $routeProvider
-                .when("/", {
-                    templateUrl : "app/components/about.htm"
-                })
-                .when("/experience", {
-                    templateUrl : "app/components/experience.htm"
-                })
-                .when("/education", {
-                    templateUrl : "app/components/education.htm"
-                })
-                .when("/skills", {
-                    templateUrl : "app/components/skills.htm"
-                })
-                .when("/interests", {
-                    templateUrl : "app/components/interests.htm"
-                });
+        <script>
+            // Setting the side menu to auto-show, not sure if I want toggling yet
+            $( document ).ready(function() {
+                $("#wrapper").toggleClass("toggled");
             });
-    </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-</body>
-
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+                var app = angular.module("myApp", ["ngRoute"]);
+                app.config(function($routeProvider) {
+                    $routeProvider
+                    .when("/", {
+                        templateUrl : "app/components/about.htm"
+                    })
+                    .when("/experience", {
+                        templateUrl : "app/components/experience.htm"
+                    })
+                    .when("/education", {
+                        templateUrl : "app/components/education.htm"
+                    })
+                    .when("/skills", {
+                        templateUrl : "app/components/skills.htm"
+                    })
+                    .when("/interests", {
+                        templateUrl : "app/components/interests.htm"
+                    });
+                });
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    </body>
 </html>
