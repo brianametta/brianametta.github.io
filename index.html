@@ -4,33 +4,37 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Briana Wright</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
         <link rel="stylesheet" type="text/css" href="assets/3rdParty/simple-sidebar.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/yeti/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="app/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
     </head>
     <body ng-app="myApp">
         <div id="wrapper">
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a ng-href="#!">About</a>
+                    <li>
+                        <img class="profile-image img-fluid rounded-circle" src="assets/img/profile.jpg" alt="">
                     </li>
                     <li>
-                        <a ng-href="#!experience">Experience</a>
+                        <a ng-href="#!">ABOUT</a>
                     </li>
                     <li>
-                        <a ng-href="#!education">Education</a>
+                        <a ng-href="#!experience">EXPERIENCE</a>
                     </li>
                     <li>
-                        <a ng-href="#!skills">Skills</a>
+                        <a ng-href="#!education">EDUCATION</a>
                     </li>
                     <li>
-                        <a ng-href="#!interests">Interests</a>
+                        <a ng-href="#!skills">SKILLS</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!interests">INTERESTS</a>
                     </li>
                 </ul>
             </div>
@@ -54,25 +58,6 @@
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
-                var app = angular.module("myApp", ["ngRoute"]);
-                app.config(function($routeProvider) {
-                    $routeProvider
-                    .when("/", {
-                        templateUrl : "app/components/about.htm"
-                    })
-                    .when("/experience", {
-                        templateUrl : "app/components/experience.htm"
-                    })
-                    .when("/education", {
-                        templateUrl : "app/components/education.htm"
-                    })
-                    .when("/skills", {
-                        templateUrl : "app/components/skills.htm"
-                    })
-                    .when("/interests", {
-                        templateUrl : "app/components/interests.htm"
-                    });
-                });
         </script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     </body>

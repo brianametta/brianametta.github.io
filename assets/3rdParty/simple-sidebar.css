@@ -28,7 +28,7 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #000;
+  background: rgb(27, 111, 167);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -63,20 +63,21 @@ body {
 }
 
 .sidebar-nav li {
-  text-indent: 20px;
+  text-indent: 60px;
   line-height: 40px;
+  /* font-size: 1.5em; */
 }
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999;
+  color: #e0e0e0;
 }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
   color: #fff;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(121, 213, 255, 0.788);
 }
 
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
