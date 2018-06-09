@@ -1,35 +1,58 @@
-/* Side Nav from w3 schools tutorial 
-    https://www.w3schools.com/howto/howto_js_sidenav.asp
-*/
-.sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
+.profile-image {
+    height: 100px;
+    width: 125px;
 }
 
-.sidenav a {
-    padding: 6px 6px 6px 32px;
-    text-decoration: none;
-    font-size: 20px;
+.name{
     color: #818181;
-    display: block;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+/* Side Nav from Start Bootstrap*/
+#sideNav .navbar-nav .nav-item .nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  @media (min-width: 992px) {
+    #sideNav {
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 17rem;
+      height: 100vh;
+    }
+    #sideNav .navbar-brand {
+      display: flex;
+      margin: auto auto 0;
+      padding: 0.5rem;
+    }
+    #sideNav .navbar-brand .img-profile {
+      max-width: 10rem;
+      max-height: 10rem;
+      border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    }
+    #sideNav .navbar-collapse {
+      display: flex;
+      align-items: flex-start;
+      flex-grow: 0;
+      width: 100%;
+      margin-bottom: auto;
+    }
+    #sideNav .navbar-collapse .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+    }
+    #sideNav .navbar-collapse .navbar-nav .nav-item {
+      display: block;
+    }
+    #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+      display: block;
+    }
+    .main-content-area {
+      left: 17rem;
+    }
+  }
+  
