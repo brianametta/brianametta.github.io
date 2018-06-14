@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ngRoute"]);
+var app = angular.module("portfolio", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {

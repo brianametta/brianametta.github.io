@@ -37,6 +37,24 @@
     color: rgba(121, 213, 255, 0.788);
 }
 
+.topNav li {
+    line-height: 40px;
+    font-weight: 200;
+    font-size: 1.2em;
+}
+
+.topNav li a {
+    display: block;
+    text-decoration: none;
+    color: #e0e0e0;
+}
+
+.topNav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(121, 213, 255, 0.788);
+}
+
 .typing-gif {
     max-width: 12rem;
     max-height: 12rem;

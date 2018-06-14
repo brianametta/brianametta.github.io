@@ -10,11 +10,39 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-        <script src="app/main.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/portfolioCtrl.js"></script>
         <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
     </head>
-    <body ng-app="myApp">
+    <body ng-app="portfolio" ng-controller="portfolioCtrl as pCtrl">
+
         <div id="wrapper">
+                <nav id="topNavigation" class="navbar navbar-expand-lg navbar-dark bg-primary">
+                        <a class="navbar-brand" href="#">Navigation</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarColor01">
+                            <ul class="navbar-nav mr-auto topNav">
+                                <li>
+                                    <a ng-href="#!">ABOUT {{pCtrl.showTopNav}}</a>
+                                </li>
+                                <li>
+                                    <a ng-href="#!experience">EXPERIENCE</a>
+                                </li>
+                                <li>
+                                    <a ng-href="#!education">EDUCATION</a>
+                                </li>
+                                <li>
+                                    <a ng-href="#!skills">SKILLS</a>
+                                </li>
+                                <li>
+                                    <a ng-href="#!interests">INTERESTS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
@@ -22,7 +50,7 @@
                         <img class="profile-image img-fluid rounded-circle" src="assets/img/profile.jpg" alt="">
                     </li>
                     <li>
-                        <a ng-href="#!">ABOUT</a>
+                        <a ng-href="#!">ABOUT {{pCtrl.showTopNav}}</a>
                     </li>
                     <li>
                         <a ng-href="#!experience">EXPERIENCE</a>
@@ -43,38 +71,12 @@
             <!-- Page Content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid" ng-view>
-                    <!-- <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> -->
+
                 </div>
             </div>
             <!-- /#page-content-wrapper -->
         </div>
 
-        <script>
-            // Setting the side menu to auto-show, not sure if I want toggling yet
-            // $( document ).ready(function() {
-            //     $("#wrapper").toggleClass("toggled");
-            // });
-            // $("#menu-toggle").click(function(e) {
-            //     e.preventDefault();
-            //     $("#wrapper").toggleClass("toggled");
-            // });
-            $(document).ready(function() {
-                if($(window).width() >= 768) {
-                        $("#wrapper").addClass("toggled");
-                    } else if($(window).width() < 768){
-                        $("#wrapper").removeClass("toggled");
-                    }
-                // This will fire when document is ready:
-                $(window).resize(function() {
-                    // This will fire each time the window is resized:
-                    if($(window).width() >= 768) {
-                        $("#wrapper").addClass("toggled");
-                    } else if($(window).width() < 768){
-                        $("#wrapper").removeClass("toggled");
-                    }
-                    }); // This will simulate a resize to trigger the initial run.
-                });   
-        </script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     </body>
 </html>
