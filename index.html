@@ -1,212 +1,78 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Briana Wright</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Briana Wright</title>
+        <link rel="stylesheet" type="text/css" href="assets/3rdParty/simple-sidebar.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/yeti/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
 
-		<!-- Header -->
-			<div id="header">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/portfolioCtrl.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+    </head>
+    <body ng-app="portfolio" ng-controller="portfolioCtrl as pCtrl">
 
-				<div class="top">
+        <div id="wrapper">
+                <nav id="topNavigation" class="navbar navbar-expand-lg navbar-dark bg-primary">
+                        <a class="navbar-brand" href="#">Navigation</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarColor01">
+                            <ul class="navbar-nav mr-auto topNav">
+                                <li>
+                                    <a ng-href="#!">ABOUT {{pCtrl.showTopNav}}</a>
+                                </li>
+                                <li>
+                                    <a ng-href="#!experience">EXPERIENCE</a>
+                                </li>
+                                <li>
+                                    <a ng-href="#!education">EDUCATION</a>
+                                </li>
+                                <li>
+                                    <a ng-href="#!skills">SKILLS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li>
+                        <img class="profile-image img-fluid rounded-circle" src="assets/img/profile.jpg" alt="">
+                    </li>
+                    <li>
+                        <a ng-href="#!">ABOUT {{pCtrl.showTopNav}}</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!experience">EXPERIENCE</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!education">EDUCATION</a>
+                    </li>
+                    <li>
+                        <a ng-href="#!skills">SKILLS</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Briana Wright</h1>
-							<p>Sofware Engineer</p>
-						</div>
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid" ng-view>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
 
-								Prologue's nav expects links in one of two formats:
-
-								1. Hash link (scrolls to a different section within the page)
-
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-								2. Standard link (sends the user to another page/site)
-
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-							-->
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Experience</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
-
-				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/briana-m-wright/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/brianametta" class="icon fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="mailto:brianametta@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-
-				</div>
-
-			</div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
-							<header>
-								<h2 class="alt">Hello World! I'm <strong>Briana Wright</strong>, a Sofware Engineer in Southern California.</h2>
-							</header>
-						</div>
-					</section>
-
-				<!-- Experience -->
-					<section id="portfolio" class="two">
-						<div class="container">
-							<header>
-								<h2>Experience</h2>
-							</header>
-							<header>
-								<h3>Software Engineer</h3>
-								<h4>SAIC</h4>
-								<h5>August 2017 - Present</h5>
-							</header>
-							<header>
-								<h3><a href="http://atl.sdsc.edu/">REU Internship</a></h3>
-								<h4>San Diego Super Computer Center</h4>
-								<h5>February 2017 - Present</h5>
-							</header>
-							<p>Analyzed performance and optimal input parameters of <a href="http://icl.cs.utk.edu/hpcc/">7 high performance computing benchmarks</a> including Linpack, DGEMM, and STREAM on cluster Comet. Strengthened ability to create and submit batch jobs using SLURM manager and MPI. Utilizing LaTeX document markup language to create research report and poster for display at the <a href="https://www.pearc.org/">PEARC17 conference</a> in New Orleans.</p>
-							<header>
-								<h3><a href="http://studentclustercompetition.us/2016/applications.html"> HPC Competition </a></h3>
-								<h4>San Diego State University</h4>
-								<h5>April 2016 - November 2016</h5>
-							</header>
-							<p>Built a small cluster with a team of 6 students. Team lead on ParaView, a visualization application that uses Python scripting. Analyzed large data sets to produce images and videos. Also worked with Hashcat and John the Ripper password cracking applications. Competed at the <a href="http://sc16.supercomputing.org/">2016 ACM/IEEE Supercomputing Conference</a> against international teams of students in Salt Lake City, Utah.</p>
-							<div class="row">
-								<div class="4u 12u$(mobile)">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic02.JPG" alt="" /></a>
-										<header>
-											<h3><a href="https://github.com/brianametta/One_Chance">2D Game Using Unity</a></h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic03.JPG" alt="" /></a>
-										<header>
-											<h3>SC16 Team in front of our booth at the 2016 ACM/IEEE Supercomputing Conference</h3>
-										</header>
-									</article>
-								</div>
-								<div class="4u 12u$(mobile)">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic04.JPG" alt="" /></a>
-										<header>
-											<h3>Setting up Nibbler, our cluster for SC16</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic05.JPG" alt="" /></a>
-										<header>
-											<h3>Working on our cluster for SC16</h3>
-										</header>
-									</article>
-								</div>
-								<div class="4u$ 12u$(mobile)">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic06.JPG" alt="" /></a>
-										<header>
-											<h3>Graph of Linpack matrix size versus time performance</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic07.JPG" alt="" /></a>
-										<header>
-											<h3><a href="https://github.com/brianametta/Crime_Alert">3D Game made in Unity</a></h3>
-										</header>
-									</article>
-								</div>
-							</div>
-
-						</div>
-					</section>
-
-				
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
-							<p>I graduated from San Diego State University in May 2017 with a Bachelor's in Computer Science. 
-							I reside in the countryside of San Diego where I enjoy a peaceful ambience to accompany my programming projects. 
-							My passions and interests include writing clean code, web development using AngularJS & Bootstrap, game design, and high performance computing. </p>
-
-						</div>
-					</section>
-
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-						<nav>
-							<ul>
-								<li><a href="https://www.linkedin.com/in/briana-m-wright/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/brianametta" class="icon fa-github"><span class="label">Github</span></a></li>
-								<li><a href="mailto:brianametta@gmail.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-								</div>
-							</form>
-
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    </body>
 </html>
